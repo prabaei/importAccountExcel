@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExceldataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MasterTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dt" Type="datetime" />
+    <Property Name="toby" Type="nvarchar" MaxLength="3" />
+    <Property Name="particular" Type="nvarchar" MaxLength="80" />
+    <Property Name="voucherType" Type="nvarchar" MaxLength="20" />
+    <Property Name="vchno" Type="int" />
+    <Property Name="debit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AccountDetail" Type="nvarchar" MaxLength="90" />
+  </EntityType>
+  <EntityType Name="secMstr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mstrid" Type="int" Nullable="false" />
+    <Property Name="head" Type="nvarchar" MaxLength="30" />
+    <Property Name="amtcheq" Type="nvarchar" MaxLength="20" />
+    <Property Name="dt" Type="datetime" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="ExceldataModelStoreContainer">
+    <EntitySet Name="MasterTable" EntityType="Self.MasterTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="secMstr" EntityType="Self.secMstr" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

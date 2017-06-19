@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ExceldataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MasterTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dt" Type="datetime" />
+          <Property Name="toby" Type="nvarchar" MaxLength="3" />
+          <Property Name="particular" Type="nvarchar" MaxLength="80" />
+          <Property Name="voucherType" Type="nvarchar" MaxLength="20" />
+          <Property Name="vchno" Type="int" />
+          <Property Name="debit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="credit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AccountDetail" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="secMstr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mstrid" Type="int" Nullable="false" />
+          <Property Name="head" Type="nvarchar" MaxLength="30" />
+          <Property Name="amtcheq" Type="nvarchar" MaxLength="20" />
+          <Property Name="dt" Type="datetime" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="ExceldataModelStoreContainer">
+          <EntitySet Name="MasterTable" EntityType="Self.MasterTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="secMstr" EntityType="Self.secMstr" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExceldataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ExceldataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MasterTable" EntityType="ExceldataModel.MasterTable" />
+          <EntitySet Name="secMstr" EntityType="ExceldataModel.secMstr" />
+        </EntityContainer>
+        <EntityType Name="MasterTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+          <Property Name="toby" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="particular" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="voucherType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="vchno" Type="Int32" />
+          <Property Name="debit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="credit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AccountDetail" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="secMstr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mstrid" Type="Int32" Nullable="false" />
+          <Property Name="head" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="amtcheq" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExceldataModelStoreContainer" CdmEntityContainer="ExceldataEntities">
+          <EntitySetMapping Name="MasterTable">
+            <EntityTypeMapping TypeName="ExceldataModel.MasterTable">
+              <MappingFragment StoreEntitySet="MasterTable">
+                <ScalarProperty Name="AccountDetail" ColumnName="AccountDetail" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="credit" ColumnName="credit" />
+                <ScalarProperty Name="debit" ColumnName="debit" />
+                <ScalarProperty Name="vchno" ColumnName="vchno" />
+                <ScalarProperty Name="voucherType" ColumnName="voucherType" />
+                <ScalarProperty Name="particular" ColumnName="particular" />
+                <ScalarProperty Name="toby" ColumnName="toby" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="secMstr">
+            <EntityTypeMapping TypeName="ExceldataModel.secMstr">
+              <MappingFragment StoreEntitySet="secMstr">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="amtcheq" ColumnName="amtcheq" />
+                <ScalarProperty Name="head" ColumnName="head" />
+                <ScalarProperty Name="mstrid" ColumnName="mstrid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

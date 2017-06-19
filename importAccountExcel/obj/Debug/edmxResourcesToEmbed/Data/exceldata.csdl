@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExceldataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ExceldataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MasterTable" EntityType="ExceldataModel.MasterTable" />
+    <EntitySet Name="secMstr" EntityType="ExceldataModel.secMstr" />
+  </EntityContainer>
+  <EntityType Name="MasterTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dt" Type="DateTime" Precision="3" />
+    <Property Name="toby" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="particular" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="voucherType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="vchno" Type="Int32" />
+    <Property Name="debit" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="credit" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AccountDetail" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="secMstr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mstrid" Type="Int32" Nullable="false" />
+    <Property Name="head" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="amtcheq" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="dt" Type="DateTime" Precision="3" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+</Schema>

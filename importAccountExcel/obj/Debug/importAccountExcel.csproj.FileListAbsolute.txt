@@ -1,1 +1,8 @@
 c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\bin\Debug\importAccountExcel.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\bin\Debug\importAccountExcel.exe
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\bin\Debug\importAccountExcel.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\obj\Debug\importAccountExcel.exe
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\obj\Debug\importAccountExcel.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\obj\Debug\importAccountExcel.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\bin\Debug\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2015\Projects\importAccountExcel\importAccountExcel\bin\Debug\EntityFramework.xml

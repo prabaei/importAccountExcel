@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExceldataModelStoreContainer" CdmEntityContainer="ExceldataEntities">
+    <EntitySetMapping Name="MasterTable">
+      <EntityTypeMapping TypeName="ExceldataModel.MasterTable">
+        <MappingFragment StoreEntitySet="MasterTable">
+          <ScalarProperty Name="AccountDetail" ColumnName="AccountDetail" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="debit" ColumnName="debit" />
+          <ScalarProperty Name="vchno" ColumnName="vchno" />
+          <ScalarProperty Name="voucherType" ColumnName="voucherType" />
+          <ScalarProperty Name="particular" ColumnName="particular" />
+          <ScalarProperty Name="toby" ColumnName="toby" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="secMstr">
+      <EntityTypeMapping TypeName="ExceldataModel.secMstr">
+        <MappingFragment StoreEntitySet="secMstr">
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="amtcheq" ColumnName="amtcheq" />
+          <ScalarProperty Name="head" ColumnName="head" />
+          <ScalarProperty Name="mstrid" ColumnName="mstrid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
