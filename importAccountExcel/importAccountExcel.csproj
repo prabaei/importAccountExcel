@@ -77,6 +77,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TallyDb\Ledgers.cs">
+      <DependentUpon>TallyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TallyDb\TallyDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TallyDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TallyDb\TallyDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TallyDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TallyDb\TallyDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TallyDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TallyDb\Vouchers.cs">
+      <DependentUpon>TallyDb.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -88,6 +109,13 @@
       <DependentUpon>exceldata.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="TallyDb\TallyDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TallyDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TallyDb\TallyDb.edmx.diagram">
+      <DependentUpon>TallyDb.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -100,6 +128,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>exceldata.edmx</DependentUpon>
       <LastGenOutput>exceldata.cs</LastGenOutput>
+    </Content>
+    <Content Include="TallyDb\TallyDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TallyDb.edmx</DependentUpon>
+      <LastGenOutput>TallyDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TallyDb\TallyDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TallyDb.edmx</DependentUpon>
+      <LastGenOutput>TallyDb.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
