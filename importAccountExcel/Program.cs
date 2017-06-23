@@ -109,7 +109,7 @@ namespace importAccountExcel
           SqlDataReader dr=  sqlcmd.ExecuteReader();
             while (dr.Read())
             {
-                
+                var 
             }
         }
     }
